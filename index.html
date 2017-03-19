@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+
+  <title>CSS Grid framework</title>
+
+  <link href="css/main.css" rel="stylesheet" />
+  <link href="css/prism.css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <div class="page" id="v-app">
+
+    <div class="margin-bottom-xlarge">
+      <h1>CSS Grid Framework</h1>
+      <p>An in-progress attempt at making a reusable CSS grid framework.</p>
+    </div>
+
+    <h2 class="margin-bottom">4 Column Basic Grid</h2>
+
+    <div class="margin-bottom-xlarge">
+      <div class="display-grid  grid-gap
+                  grid-template-columns-4  
+                  ai-stretch  text-align-center  margin-bottom"
+      >
+
+        <!-- Column 1 -->
+        <div class="grs-1  gre-2  gcs-1  gce-2  bc-blue  padding">
+          <p>Row 1</p>
+          <p>Column 1</p>
+        </div>
+
+        <div class="grs-2  gre-3  gcs-1  gce-2  bc-blue  padding">
+          <p>Row 2</p>
+          <p>Column 1</p>
+        </div>
+
+
+        <!-- Column 2 -->
+        <div class="grs-1  gre-3  gcs-2  gce-3  bc-blue  padding">
+          <p>Rows 1-2</p>
+          <p>Column 2</p>
+        </div>
+      
+
+        <!-- Column 3 -->
+        <div class="grs-1  gre-2  gcs-3  gce-5  bc-blue  padding">
+          <p>Row 1</p>
+          <p>Columns 3-4</p>
+        </div>
+
+
+        <!-- Column 4 -->
+        <div class="grs-2  gre-3  gcs-3  gce-4  bc-blue  padding">
+          <p>Row 2</p>
+          <p>Column 3</p>
+        </div>
+
+        <div class="grs-2  gre-3  gcs-4  gce-5  bc-blue  padding">
+          <p>Row 2</p>
+          <p>Column 4</p>
+        </div>
+
+      </div>
+
+      <div class="">
+        <v-toggle>
+
+    <pre><code class="language-html"><script type="prism-html-markup">
+    <style>
+      .display-grid            { display: grid; }
+      .grid-gap                { grid-gap: 16px; }
+      .grid-template-columns-4 { grid-template-columns: repeat(4, 1fr); /* 1 Fraction */ }
+      .align-items-stretch     { align-items: stretch; }
+
+      .grs-# { grid-row-start: #; }
+      .gre-# { grid-row-end: #; }
+      .gcs-# { grid-column-start: #; }
+      .gce-# { grid-column-end: #; }
+
+      .bc-blue { background-color: blue; }
+    </style>
+
+    <div class="display-grid  grid-template-columns-4  grid-gap  align-items-stretch">
+
+      <!-- Column 1 -->
+      <div class="bc-blue  grs-1  gre-2  gcs-1  gce-2">
+        <p>Row 1</p>
+        <p>Column 1</p>
+      </div>
+
+      <div class="bc-blue  grs-2  gre-3  gcs-1  gce-2">
+        <p>Row 2</p>
+        <p>Column 1</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="bc-blue  grs-1  gre-3  gcs-2  gce-3">
+        <p>Rows 1-2</p>
+        <p>Column 2</p>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="bc-blue  grs-1  gre-2  gcs-3  gce-5">
+        <p>Row 1</p>
+        <p>Columns 3-4</p>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="bc-blue  grs-2  gre-3  gcs-3  gce-4">
+        <p>Row 2</p>
+        <p>Column 3</p>
+      </div>
+
+      <div class="bc-blue  grs-2  gre-3  gcs-4  gce-5">
+        <p>Row 2</p>
+        <p>Column 4</p>
+      </div>
+
+    </div>
+    </script></code></pre>
+
+        </v-toggle>
+      </div>
+
+    </div>
+
+    <h2 class="margin-bottom">12 Column Grid</h2>
+
+    <div class="display-grid  grid-row-gap--small  grid-column-gap--small   
+                grid-template-rows-3  grid-template-columns-12  
+                ai-stretch  text-align-center  margin-bottom-xlarge"
+    >
+
+      <!-- Column 1
+      grs (Grid Row Start) / gre (Grid Row End) / gcs (Grid Column Start) / gce (Grid Column End) -->
+      <div class="grs-1  gre-2  gcs-1  gce-2  align-self-center">
+        <h4>Row 1</h4>
+        <h4>Column 1</h4>
+      </div>
+
+      <div class="grs-2  gre-3  gcs-1  gce-2  align-self-center">
+        <h4>Row 2</h4>
+      </div>
+
+      <div class="grs-3  gre-4  gcs-1  gce-2  align-self-center">
+        <h4>Row 3</h4>
+      </div>
+
+
+
+      <!-- Column 2 -->
+      <div class="grs-1  gre-2  gcs-2  gce-3  align-self-center">
+        <h4>Column 2</h4>
+      </div>
+
+      <div class="grs-2  gre-3  gcs-2  gce-3  bc-red  padding-small">
+        <p>R2/C2</p>
+      </div>
+
+      <div class="grs-3  gre-4  gcs-2  gce-4  bc-red  padding-small">
+        <p>R3/C2-3</p>
+      </div>
+
+
+
+      <!-- Column 3 -->
+      <div class="grs-1  gre-2  gcs-3  gce-4  align-self-center">
+        <h4>Column 3</h4>
+      </div>
+
+      <div class="grs-2  gre-3  gcs-3  gce-4  bc-red  padding-small">
+        <p>R2/C3</p>
+      </div>
+
+
+
+      <!-- Column 4 -->
+      <div class="grs-1  gre-2  gcs-4  gce-5  align-self-center">
+        <h4>Column 4</h4>
+      </div>
+
+      <div class="grs-2  gre-4  gcs-4  gce-5  align-self-stretch  bc-red  padding-small">
+        <p>R2-3/C4</p>
+      </div>
+
+
+
+      <!-- Column 5 -->
+      <div class="grs-1  gre-2  gcs-5  gce-6  align-self-center">
+        <h4>Column 5</h4>
+      </div>
+
+      <div class="grs-2  gre-3  gcs-5  gce-6  bc-red  padding-small">
+        <p>R2/C5</p>
+      </div>
+
+      <div class="grs-3  gre-4  gcs-5  gce-6  bc-red  padding-small">
+        <p>R3/C5</p>
+      </div>
+      
+      
+
+      <!-- Column 6 -->
+      <div class="grs-1  gre-2  gcs-6  gce-7  align-self-center">
+        <h4>Column 6</h4>
+      </div>
+
+      <div class="grs-2  gre-3  gcs-6  gce-8  bc-red  padding-small">
+        <p>R2/C6-7</p>
+      </div>
+
+      <div class="grs-3  gre-4  gcs-6  gce-7  bc-red  padding-small">
+        <p>R3/C6</p>
+      </div>
+
+
+
+      <!-- Column 7 -->
+      <div class="grs-1  gre-2  gcs-7  gce-8  align-self-center">
+        <h4>Column 7</h4>
+      </div>
+
+      <div class="grs-3  gre-4  gcs-7  gce-8  bc-red  padding-small">
+        <p>R3/C7</p>
+      </div>
+
+
+
+      <!-- Column 8 -->
+      <div class="grs-1  gre-2  gcs-8  gce-9  align-self-center">
+        <h4>Column 8</h4>
+      </div>
+
+      <div class="grs-2  gre-3  gcs-8  gce-9  bc-red  padding-small">
+        <p>R2/C8</p>
+      </div>
+
+      <div class="grs-3  gre-4  gcs-8  gce-9  bc-red  padding-small">
+        <p>R3/C8</p>
+      </div>
+
+
+
+      <!-- Column 9 -->
+      <div class="grs-1  gre-2  gcs-9  gce-10  align-self-center">
+        <h4>Column 9</h4>
+      </div>
+
+      <div class="grs-2  gre-3  gcs-9  gce-10  bc-red  padding-small">
+        <p>R2/C9</p>
+      </div>
+
+      <div class="grs-3  gre-4  gcs-9  gce-10  bc-red  padding-small">
+        <p>R3/C9</p>
+      </div>
+
+
+
+      <!-- Column 10 -->
+      <div class="grs-1  gre-2  gcs-10  gce-11  align-self-center">
+        <h4>Column 10</h4>
+      </div>
+
+      <div class="grs-2  gre-3  gcs-10  gce-11  bc-red  padding-small">
+        <p>R2/C10</p>
+      </div>
+
+      <div class="grs-3  gre-4  gcs-10  gce-11  bc-red  padding-small">
+        <p>R3/C10</p>
+      </div>
+
+
+
+      <!-- Column 11 -->
+      <div class="grs-1  gre-2  gcs-11  gce-12  align-self-center">
+        <h4>Column 11</h4>
+      </div>
+
+      <div class="grs-2  gre-3  gcs-11  gce-12  bc-red  padding-small">
+        <p>R2/C11</p>
+      </div>
+
+      <div class="grs-3  gre-4  gcs-11  gce-12  bc-red  padding-small">
+        <p>R3/C11</p>
+      </div>
+      
+      
+      
+      <!-- Column 12 -->
+      <div class="grs-1  gre-2  gcs-12  gce-13  align-self-center">
+        <h4>Column 12</h4>
+      </div>
+
+      <div class="grs-2  gre-3  gcs-12  gce-13  bc-red  padding-small">
+        <p>R2/C12</p>
+      </div>
+
+      <div class="grs-3  gre-4  gcs-12  gce-13  bc-red  padding-small">
+        <p>R3/C12</p>
+      </div>
+
+    </div>
+
+    <div class="padding">
+      <p>Current support for CSS Grid.</p>
+      <a target="_blank" href="http://caniuse.com/#search=css%20grid">
+        http://caniuse.com/#search=css%20grid
+      </a>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <!-- toggle template -->
+  <template id="v-toggle">
+    <button class="btn" v-on:click.prevent="toggle()">
+      {{ toggleActive ? 'Hide HTML' : 'Show HTML' }}
+    </button>
+
+    <div v-show="toggleActive">
+      <slot></slot>
+    </div>
+  </template>
+
+  <script src="js/vue.js"></script>
+  <script src="js/prism.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
